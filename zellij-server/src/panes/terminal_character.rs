@@ -566,9 +566,7 @@ impl Display for CharacterStyles {
                     write!(f, "\u{1b}[1m")?;
                 },
                 AnsiCode::Reset => {
-                    write!(f, "\u{1b}[22m\u{1b}[24m")?;
-                    // TODO: this cancels bold + underline, if this behaviour is indeed correct, we
-                    // need to properly handle it in the struct methods etc like dim
+                    write!(f, "\u{1b}[22m")?;
                 },
                 _ => {},
             }
